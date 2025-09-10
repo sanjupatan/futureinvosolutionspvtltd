@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Simple Webpage</title>
+    <style>
+        div h1{
+            font-size: 36px;
+        }
+
+
+
+
+        body {
+            background-image: url('backooo.jpg');
+            background-size: cover;
+            
+        }
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding : 0;
+        }
+
+        .navbar {
+            background-image: url('ground.jpg');
+            
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: right;
+            display: block;
+            color: black;
+            padding: 24px 40px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+        }
+
+        .home-content {
+            padding: 20px;
+        }
+
+        .home-content h1 {
+            color: rgb(66, 100, 222);
+        }
+
+        .home-content p {
+            font-size : 28px;
+            line-height : 1.6;
+
+        }
+        .brand {
+            color: black;
+            text-align :"center";
+            padding:24px 18px;
+            font-size: 28px;
+            font-family: 'montserrat',sans-seri;
+            background-image: url("logo.jpg");
+        }
+        .right-image{
+            float: right;
+            margin: 10px;
+            width: 600px;
+            height: 500px;
+
+        }
+
+        
+         
+        .button-icon {
+            margin-right: 8px;
+            font-size: 20px;
+            
+        }
+        
+          .fa-solid{
+        font-size: 28px;
+    }
+   
+   
+    .my-button {
+        text-align: center;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: rgb(220, 243, 245);
+        color: rgb(73, 149, 207);
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 30px;
+        user-select: none;
+       
+    }
+    .hidden-content {
+        display: none;
+        margin-top: 10px;
+        padding: 15px;
+        background-color: aqua;
+        border-radius: 5px;
+    }
+
+    #toggle:checked + .my-button + .hidden-content {
+        display:block;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: azure;
+    }
+
+    .modal-target {
+        display: block;
+
+    }
+
+    .modal-content {
+        background-color: aliceblue;
+        padding: 30px;
+        max-width: 400px;
+        margin: 100px auto;
+        border-radius: 8px;
+        position: relative;
+        text-align: left;
+    }
+
+    .modal-content input,
+    .modal-content select{
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+
+    }
+
+    .modal-content button{
+        width: 100%;
+        padding: 12px;
+        background-color: rgb(240, 238, 238);
+        color: black;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        text-decoration: none;
+        font-size: 24px;
+        color: black;
+    }
+
+    
+        
+        </style>       
+       
+</head>
+2
+<body>     
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#">Contact</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Home</a>
+        <div class="brand"="margin-left:auto;">Future Invo Solutions pvt ltd
+         
+        </div>
+    </nav>
+
+    <!-- Home Content Section -->
+     
+    <div class="home-content">
+        <h1 style="font-size: 44px">Empowering Businesses Through Smart IT Solutions</h1>
+        <img class="right-image" src="side.jpg">
+        <p>Future invo solutions is a fast-growing, AI-enabled technology company on a mission to drive transformation through intelligent, scalable, and future-proof IT solutions.From designing sleek websites and intuitive mobile apps to delivering data-driven AI tools, UI/UX desogn,BPO, and technical support-we combine innovation, technology, and stratergy to help businesses grow in today's digital-first world.We serve clients across industrial and global markets with a *Hybrid Work Model* that combines the best of in-office collaboratioon and remote flexibility.</p>
+         
+        <h2  style="color: rgb(66,100, 222); >
+        <i class="fa-solid fa-lightbulb"></i>
+        What We Do:</h2>
+        <ul style="font-size: 26px">
+           
+            <li>Frontend & Backend Developer</li>
+            <li>Mobile App Developer</li>
+            <li>UI/UX Design</li>
+            <li>Artificial Intelligence & Data Science</li>
+            <li>Business Process Outsourcing(BPO)</li>
+            <li>Technical Support & Remote Services</li>
+            <li>Digital Marketing & Training</li>
+        </ul>
+
+
+    </div>
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="my-button" onclick="openform()">Upload my details</button>
+
+    </div>
+    <div id="formpopup" class="modal" style="display: none;">
+        <div class="modal-content">
+            <a href="#" class=" close-btn" onclick="closeform()">&times;</a>
+            <h2>Please fill the details</h2>
+            <form>
+                <input type="text" placeholder="Enter your name" required><br>
+                <input type="email" placeholder=" Enter your email" required><br>
+                <input type="tel" placeholder="Enter your contact number" required><br>
+
+                <select required>
+                    <option value=" ">Select Occupation</option>
+                    <option>BTech/BE</option>
+                    <option>MTech</option>
+                    <option>Diploma</option>
+                    <option>MCA</option>
+                    <option>Other</option>
+                </select><br>
+
+                <select required>
+                    <option value="">Years of experience</option>
+                    <option>0-1</option>
+                    <option>1-2</option>
+                    <option>2-3</option>
+                    <option>3+</option>
+                </select><br>
+
+                <select required>
+                    <option value=" "> Looking for</option>
+                    <option>Frontend & Backend Developer</option>
+                    <option>Mobile App Developer</option>
+                    <option>UI/UX Design</option>
+                    <option>Artificial Intelligence & Data Science</option>
+                    <option>Business Process Outsourcing(BPO)</option>
+                    <option>Technical support & Remote Services</option>
+                    <option>Digital Marketing & Training</option>
+                    
+                </select><br>
+
+                <button type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openform() {
+            document.getElementById("formpopup").style.display = "block";
+        }
+        function closeform() {
+            document.getElementById("formpopup").style.display="none";
+        }
+    </script>
+
+</body>
+
+</html>
